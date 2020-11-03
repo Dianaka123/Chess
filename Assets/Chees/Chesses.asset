@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fa16a04b284a2d967780956dd0d951, type: 3}
+  m_Name: Chesses
+  m_EditorClassIdentifier: 
+  kingPiece: {fileID: 11400000, guid: 3a1688feeefe849f8be2738cb8aad480, type: 2}
+  queenPiece: {fileID: 11400000, guid: 914d5ca0ddb18497ba54eb7c7bfe484e, type: 2}
+  knightPiece: {fileID: 11400000, guid: 1b318e24e815243b5b5e064cf8658b03, type: 2}
+  bishopPiece: {fileID: 11400000, guid: 41585544feceb47f7b4aacc54eaf9f69, type: 2}
+  castlePiece: {fileID: 11400000, guid: d65046ee4ef2e4216898cc0feae0cd98, type: 2}
+  pawnPiece: {fileID: 11400000, guid: b068e0d8b53d344968c9c37c8740c7ed, type: 2}
