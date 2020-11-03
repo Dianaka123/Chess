@@ -44,4 +44,16 @@ public class ChessController : MonoBehaviour
     {
         return pieceInfos[position.x, position.y];
     }
+
+    public void MovePiece(PieceInfo info, Vector2Int from, Vector2Int to)
+    {
+        var toPiece = pieceInfos[to.x, to.y];
+        pieceInfos[from.x, from.y] = null;
+        if (toPiece != null && toPiece.IsDark != info.IsDark) 
+        {
+            Destroy(toPiece.GameObject);
+        }
+        pieceInfos[to.x, to.y] = info;
+    }
+    
 }

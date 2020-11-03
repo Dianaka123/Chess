@@ -10,6 +10,9 @@ public class SelectController : MonoBehaviour
     [SerializeField] private Checkerboard checkerboard;
     [SerializeField] private ChessController chessController;
 
+    private PieceInfo selectedPiece;
+    private Vector2Int selectedLocation;
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -18,12 +21,24 @@ public class SelectController : MonoBehaviour
             if (Physics.Raycast(ray, out var hit))
             {
                 var gridLocation = checkerboard.ConvertFromWorldLocation(hit.point);
-                var pieceInfo = chessController.GetPieceInfo(gridLocation);
-                if (pieceInfo == null)
+
+                if (selectedPiece != null)
                 {
-                    return;
+                    chessController.MovePiece(selectedPiece, selectedLocation, gridLocation);
+                    selectedPiece = null;
                 }
-                Debug.Log(pieceInfo.Piece.PieceName);
+                else
+                {
+                    var pieceInfo = chessController.GetPieceInfo(gridLocation);
+                    if (pieceInfo == null)
+                    {
+                        return;
+                    }
+
+                    selectedLocation = gridLocation;
+                    selectedPiece = pieceInfo;
+                    Debug.Log(pieceInfo.Piece.PieceName);
+                }
             }
         }
     }
