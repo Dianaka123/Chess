@@ -54,6 +54,7 @@ public class ChessController : MonoBehaviour
             Destroy(toPiece.GameObject);
         }
         pieceInfos[to.x, to.y] = info;
+        info.GameObject.transform.position = chessboard.ConvertToWorldLocation(to);
     }
     
 }
